@@ -13,8 +13,27 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.brainmatch.ui.profile.ProfileFragment"
+        android:name="com.example.brainmatch.ui.profile.MessagesFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_profile_params"
+        android:name="com.example.brainmatch.ui.profileParams.ProfileParamsFragment"
+        android:label="@string/title_profile_params"
+        tools:layout="@layout/fragment_profile_params" />
+
+    <fragment
+        android:id="@+id/navigation_messages"
+        android:name="com.example.brainmatch.ui.messages.MessagesFragment"
+        android:label="@string/title_messages"
+        tools:layout="@layout/fragment_messages" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.brainmatch.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
 
 </navigation>

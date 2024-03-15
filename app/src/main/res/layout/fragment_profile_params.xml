@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.MessagesFragment">
+    tools:context=".ui.profile.ProfileParamsFragment">
 
     <TextView
-        android:id="@+id/text_profile"
+        android:id="@+id/text_profile_params"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

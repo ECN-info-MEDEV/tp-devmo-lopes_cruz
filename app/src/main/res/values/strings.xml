@@ -2,4 +2,7 @@
     <string name="app_name">BrainMatch</string>
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
+    <string name="title_profile_params">Profile Settings</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_messages">Messages</string>
 </resources>
