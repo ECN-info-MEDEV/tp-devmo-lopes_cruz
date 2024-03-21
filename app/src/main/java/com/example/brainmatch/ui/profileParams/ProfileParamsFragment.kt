@@ -28,10 +28,23 @@ class ProfileParamsFragment : Fragment() {
         _binding = FragmentProfileParamsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textProfileParams
-        profileParamsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        // Get references to the EditTexts
+        val universityEditText = binding.universityEditText
+        val degreeEditText = binding.degreeEditText
+        val academicYearEditText = binding.academicYearEditText
+        val specializationEditText = binding.specializationEditText
+        val cityEditText = binding.cityEditText
+
+        // Observe changes in the form data
+        profileParamsViewModel.form.observe(viewLifecycleOwner) { form ->
+            // Update UI elements with the new form data
+            binding.universityLabel.text = form.university
+            binding.degreeLabel.text = form.degree
+            binding.academicYearLabel.text = form.academicYear
+            binding.specializationLabel.text = form.specialization
+            binding.cityLabel.text = form.city
         }
+
         return root
     }
 
