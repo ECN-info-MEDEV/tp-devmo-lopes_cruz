@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.brainmatch.databinding.FragmentProfileBinding
@@ -32,6 +33,13 @@ class ProfileFragment : Fragment() {
         binding.buttonProfileParams.setOnClickListener { view ->
             onProfileParamsClick(view)
         }
+        // Set the icon next to the app name in the ActionBar
+        /*
+        (activity as AppCompatActivity).supportActionBar?.apply {
+            setDisplayShowHomeEnabled(true)
+            setIcon(R.drawable.ic_logo_black)
+        }
+        */
         return root
     }
 
