@@ -8,7 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.brainmatch.databinding.FragmentProfileBinding
-import com.example.brainmatch.ui.profile.ProfileViewModel
+import androidx.navigation.fragment.findNavController
+import com.example.brainmatch.R
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
@@ -36,4 +37,9 @@ class ProfileFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    fun onProfileParamsClick(view: View) {
+        findNavController().navigate(R.id.navigation_profile_params)
+    }
+
 }
