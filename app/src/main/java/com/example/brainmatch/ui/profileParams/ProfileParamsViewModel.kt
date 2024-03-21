@@ -1,13 +1,18 @@
 package com.example.brainmatch.ui.profileParams
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ProfileParamsViewModel : ViewModel() {
+    private val _form = MutableLiveData<Form>()
+    val form: MutableLiveData<Form>
+        get() = _form
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is profile parameters Fragment"
+    init {
+        _form.value = Form("", "", "", "", "")
     }
-    val text: LiveData<String> = _text
+
+    fun updateForm(university: String, degree: String, academicYear: String, specialization: String, city: String) {
+        _form.value = Form(university, degree, academicYear, specialization, city)
+    }
 }
