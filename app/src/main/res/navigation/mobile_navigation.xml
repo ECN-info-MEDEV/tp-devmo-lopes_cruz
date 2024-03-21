@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.brainmatch.ui.profile.MessagesFragment"
+        android:name="com.example.brainmatch.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 
