@@ -22,13 +22,15 @@ class ProfileFragment : Fragment() {
     ): View {
         val profileViewModel =
             ViewModelProvider(this).get(ProfileViewModel::class.java)
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         val textView: TextView = binding.textProfile
         profileViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+        // Add click listener to navigate to profile params
+        binding.buttonProfileParams.setOnClickListener { view ->
+            onProfileParamsClick(view)
         }
         return root
     }

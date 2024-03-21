@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.brainmatch.R
 import com.example.brainmatch.databinding.FragmentProfileParamsBinding
 
 class ProfileParamsFragment : Fragment() {
-
     private var _binding: FragmentProfileParamsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,11 +30,19 @@ class ProfileParamsFragment : Fragment() {
         profileParamsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+        // Add click listener to navigate to profile params
+        binding.buttonProfile.setOnClickListener { view ->
+            onReturnClick(view)
+        }
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun onReturnClick(view: View) {
+        findNavController().navigate(R.id.navigation_profile)
     }
 }
