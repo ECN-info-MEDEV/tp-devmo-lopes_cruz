@@ -8,17 +8,17 @@
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_profile_black_24dp"
+        android:icon="@drawable/ic_profile"
         android:title="@string/title_profile" />
 
     <item
         android:id="@+id/navigation_messages"
-        android:icon="@drawable/ic_profile_black_24dp"
+        android:icon="@drawable/ic_messages"
         android:title="@string/title_messages" />
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_profile_black_24dp"
+        android:icon="@drawable/ic_notifications"
         android:title="@string/title_notifications" />
 
     <item
