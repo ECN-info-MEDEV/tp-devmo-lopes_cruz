@@ -6,17 +6,54 @@
     android:layout_height="match_parent"
     android:fontFamily="@font/montserrat_bold"
     tools:context=".ui.profileParams.ProfileParamsFragment">
+    <TextView
+        android:id="@+id/profileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/votre_profile"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/montserrat_bold"
+        app:layout_constraintBottom_toTopOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="1300dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle"
+        app:srcCompat="@drawable/victoria"
+        app:layout_constraintBottom_toTopOf="@id/universityLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/editImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="@id/profileImage"
+        app:layout_constraintStart_toStartOf="@id/profileImage"
+        app:layout_constraintTop_toTopOf="@id/profileImage"
+        app:layout_constraintVertical_bias="1"
+        app:srcCompat="@drawable/edit" />
 
     <TextView
         android:id="@+id/universityLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@+id/universityEditText"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"
         android:text="@string/university"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/profileImage"/>
 
     <EditText
         android:id="@+id/universityEditText"
@@ -27,6 +64,8 @@
         android:fontFamily="@font/montserrat"
         android:textColorHint="#5B808080"
         android:background="@drawable/form_border"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/universityLabel" />
 
@@ -35,9 +74,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@+id/degreeEditText"
+        android:textColor="#000000"
         android:text="@string/degree"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/universityEditText" />
 
@@ -48,6 +91,8 @@
         android:padding="12dp"
         android:hint="@string/degree_hint"
         android:fontFamily="@font/montserrat"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textColorHint="#5B808080"
         android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,8 +103,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@+id/academicYearEditText"
+        android:textColor="#000000"
         android:text="@string/academicYear"
         android:fontFamily="@font/montserrat_bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/degreeEditText" />
@@ -72,6 +121,8 @@
         android:hint="@string/academicYear_hint"
         android:fontFamily="@font/montserrat"
         android:textColorHint="#5B808080"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/academicYearLabel" />
@@ -80,7 +131,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@+id/specializationEditText"
+        android:textColor="#000000"
         android:text="@string/specialization"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +149,8 @@
         android:hint="@string/specialization_hint"
         android:fontFamily="@font/montserrat"
         android:textColorHint="#5B808080"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/specializationLabel" />
@@ -104,6 +161,10 @@
         android:labelFor="@+id/cityEditText"
         android:text="@string/city"
         android:fontFamily="@font/montserrat_bold"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/specializationEditText" />
@@ -116,6 +177,8 @@
         android:hint="@string/city_hint"
         android:fontFamily="@font/montserrat"
         android:textColorHint="#5B808080"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cityLabel" />
@@ -129,8 +192,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
     <!-- Chain the views vertically -->
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"

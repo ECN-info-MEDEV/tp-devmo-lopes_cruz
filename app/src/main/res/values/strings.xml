@@ -15,5 +15,5 @@
     <string name="academicYear_hint">20XX - XX</string>
     <string name="city_hint">XXXX</string>
     <string name="specialization_hint">XXX</string>
-
+    <string name="votre_profile">Votre Profile</string>
 </resources>
