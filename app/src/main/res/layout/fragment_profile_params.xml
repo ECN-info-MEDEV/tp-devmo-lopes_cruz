@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fontFamily="@font/montserrat_bold"
     tools:context=".ui.profileParams.ProfileParamsFragment">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:labelFor="@+id/universityEditText"
         android:text="@string/university"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,6 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
+        android:hint="@string/university_hint"
+        android:fontFamily="@font/montserrat"
+        android:textColorHint="#5B808080"
+        android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/universityLabel" />
 
@@ -30,6 +36,7 @@
         android:layout_height="wrap_content"
         android:labelFor="@+id/degreeEditText"
         android:text="@string/degree"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/universityEditText" />
@@ -39,6 +46,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
+        android:hint="@string/degree_hint"
+        android:fontFamily="@font/montserrat"
+        android:textColorHint="#5B808080"
+        android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/degreeLabel" />
 
@@ -48,6 +59,7 @@
         android:layout_height="wrap_content"
         android:labelFor="@+id/academicYearEditText"
         android:text="@string/academicYear"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/degreeEditText" />
@@ -57,6 +69,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
+        android:hint="@string/academicYear_hint"
+        android:fontFamily="@font/montserrat"
+        android:textColorHint="#5B808080"
+        android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/academicYearLabel" />
     <TextView
@@ -65,6 +81,7 @@
         android:layout_height="wrap_content"
         android:labelFor="@+id/specializationEditText"
         android:text="@string/specialization"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/academicYearEditText" />
@@ -74,6 +91,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
+        android:hint="@string/specialization_hint"
+        android:fontFamily="@font/montserrat"
+        android:textColorHint="#5B808080"
+        android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/specializationLabel" />
     <TextView
@@ -82,6 +103,7 @@
         android:layout_height="wrap_content"
         android:labelFor="@+id/cityEditText"
         android:text="@string/city"
+        android:fontFamily="@font/montserrat_bold"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/specializationEditText" />
@@ -91,6 +113,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
+        android:hint="@string/city_hint"
+        android:fontFamily="@font/montserrat"
+        android:textColorHint="#5B808080"
+        android:background="@drawable/form_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cityLabel" />
 

@@ -10,4 +10,10 @@
     <string name="academicYear">Academic Year</string>
     <string name="city">City</string>
     <string name="specialization">Specialization</string>
+    <string name="university_hint">CSX</string>
+    <string name="degree_hint">B.Tech</string>
+    <string name="academicYear_hint">20XX - XX</string>
+    <string name="city_hint">XXXX</string>
+    <string name="specialization_hint">XXX</string>
+
 </resources>
