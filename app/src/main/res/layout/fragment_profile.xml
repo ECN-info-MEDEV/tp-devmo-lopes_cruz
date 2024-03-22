@@ -5,7 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="top"
-    android:layout_margin="20sp"
+    android:layout_marginLeft="20sp"
+    android:layout_marginRight="20sp"
+    android:layout_marginBottom="20sp"
+    android:layout_marginTop="0sp"
     tools:context=".ui.profile.ProfileFragment">
 
     <LinearLayout
@@ -13,52 +16,128 @@
         android:layout_height="200dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginBottom="20sp"
-        android:layout_marginTop="20sp"
+        android:layout_marginBottom="40sp"
+        android:layout_marginTop="0sp"
         >
-
-        <ImageView
+        <com.example.brainmatch.ui.SquareImageView
             android:id="@+id/image_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/profile_pic" />
-
+            android:src="@drawable/profile_pic"
+            android:scaleType="centerCrop"
+            android:padding="3sp"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            app:strokeColor="@color/colorHighlight"
+            app:strokeWidth="5sp"
+            />
         <TextView
             android:id="@+id/text_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_profile_params"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_profile_params"
-        android:onClick="onProfileParamsClick" />
-
-    <Button
-        android:id="@+id/button_profile_params_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_profile_params"
-        android:onClick="onProfileParamsClick" />
-
-    <Button
-        android:id="@+id/button_profile_params_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_profile_params"
-        android:onClick="onProfileParamsClick" />
-
-    <Button
-        android:id="@+id/button_profile_params_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_profile_params"
-        android:onClick="onProfileParamsClick" />
-
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+        <LinearLayout
+            style="@style/TransparentGreenButton"
+            android:id="@+id/button_profile_params"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:onClick="onProfileParamsClick"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/button_icon_1"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:src="@drawable/ic_profile"
+                app:tint="@color/black"
+                />
+            <TextView
+                android:id="@+id/button_text_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile Settings"
+                android:layout_marginLeft="20sp"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/TransparentGreenButton"
+            android:id="@+id/button_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/button_icon_2"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:src="@drawable/ic_share"
+                app:tint="@color/black"
+                />
+            <TextView
+                android:id="@+id/button_text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share with Friends"
+                android:layout_marginLeft="20sp"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/TransparentGreenButton"
+            android:id="@+id/button_useless_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/button_icon_3"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/black"
+                />
+            <TextView
+                android:id="@+id/button_text_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="App Settings"
+                android:layout_marginLeft="20sp"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/TransparentGreenButton"
+            android:id="@+id/button_useless_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/button_icon_4"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:src="@drawable/ic_logout"
+                app:tint="@color/black"
+                />
+            <TextView
+                android:id="@+id/button_text_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:text="Log out"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

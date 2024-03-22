@@ -9,7 +9,7 @@ import com.example.brainmatch.R
 class ProfileViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is profile main page"
+        value = "Marion\nCotillard"
     }
     val text: LiveData<String> = _text
 
