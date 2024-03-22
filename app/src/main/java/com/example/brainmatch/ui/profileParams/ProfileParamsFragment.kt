@@ -35,15 +35,6 @@ class ProfileParamsFragment : Fragment() {
         val specializationEditText = binding.specializationEditText
         val cityEditText = binding.cityEditText
 
-        // Get references to the TextViews
-        val universityLabel = binding.universityLabel
-        val degreeLabel = binding.degreeLabel
-        val academicYearLabel = binding.academicYearLabel
-        val specializationLabel = binding.specializationLabel
-        val cityLabel = binding.cityLabel
-
-        universityLabel.text = "University"
-
         // Observe changes in the form data
         profileParamsViewModel.form.observe(viewLifecycleOwner) { form ->
             universityEditText.setText(form.university)
