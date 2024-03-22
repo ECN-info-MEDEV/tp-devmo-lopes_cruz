@@ -5,12 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.brainmatch.databinding.FragmentProfileBinding
 import androidx.navigation.fragment.findNavController
-import com.example.brainmatch.R
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
@@ -31,7 +29,7 @@ class ProfileFragment : Fragment() {
         }
         // Add click listener to navigate to profile params
         binding.buttonProfileParams.setOnClickListener { view ->
-            onProfileParamsClick(view)
+            profileViewModel.onProfileParamsClick(findNavController())
         }
         return root
     }
@@ -40,9 +38,4 @@ class ProfileFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-    fun onProfileParamsClick(view: View) {
-        findNavController().navigate(R.id.navigation_profile_params)
-    }
-
 }
