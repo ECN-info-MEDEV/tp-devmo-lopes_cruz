@@ -14,7 +14,6 @@ import com.example.brainmatch.databinding.FragmentProfileParamsBinding
 class ProfileParamsFragment : Fragment() {
 
     private var _binding: FragmentProfileParamsBinding? = null
-    private lateinit var profileParamsViewModel: ProfileParamsViewModel
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -43,72 +42,36 @@ class ProfileParamsFragment : Fragment() {
         specializationEditText = binding.specializationEditText
         cityEditText = binding.cityEditText
 
-        // Add TextWatchers to the EditTexts
-        universityEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                profileParamsViewModel.updateUniversity(s.toString())
+        val formTextWatcher = object : TextWatcher {
+            var oldText: String = ""
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                oldText = s.toString()
             }
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // No action needed here
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // This space intentionally left blank
             }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // No action needed here
+            override fun afterTextChanged(s: Editable) {
+                if (oldText != s.toString()) {
+                    profileParamsViewModel.updateForm(
+                        universityEditText.text.toString(),
+                        degreeEditText.text.toString(),
+                        academicYearEditText.text.toString(),
+                        specializationEditText.text.toString(),
+                        cityEditText.text.toString()
+                    )
+                }
             }
-        })
-        degreeEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                profileParamsViewModel.updateDegree(s.toString())
-            }
+        }
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // No action needed here
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // No action needed here
-            }
-        })
-        academicYearEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                profileParamsViewModel.updateAcademicYear(s.toString())
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // No action needed here
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // No action needed here
-            }
-        })
-        specializationEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                profileParamsViewModel.updateSpecialization(s.toString())
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // No action needed here
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // No action needed here
-            }
-        })
-        cityEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                profileParamsViewModel.updateCity(s.toString())
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // No action needed here
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // No action needed here
-            }
-        })
+        // Add the FormTextWatcher to each EditText
+        universityEditText.addTextChangedListener(formTextWatcher)
+        degreeEditText.addTextChangedListener(formTextWatcher)
+        academicYearEditText.addTextChangedListener(formTextWatcher)
+        specializationEditText.addTextChangedListener(formTextWatcher)
+        cityEditText.addTextChangedListener(formTextWatcher)
 
         // Observe changes in the form data
         profileParamsViewModel.form.observe(viewLifecycleOwner) { form ->
