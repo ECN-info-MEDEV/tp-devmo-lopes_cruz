@@ -9,13 +9,13 @@ import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.brainmatch.R
 import com.example.brainmatch.databinding.FragmentProfileParamsBinding
 
 class ProfileParamsFragment : Fragment() {
-
     private var _binding: FragmentProfileParamsBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+
     private val binding get() = _binding!!
 
     // Declare the EditTexts
@@ -88,5 +88,9 @@ class ProfileParamsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun onReturnClick(view: View) {
+        findNavController().navigate(R.id.navigation_profile)
     }
 }

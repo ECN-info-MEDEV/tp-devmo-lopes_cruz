@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.brainmatch.databinding.FragmentProfileBinding
 import androidx.navigation.fragment.findNavController
-import com.example.brainmatch.R
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
@@ -22,13 +21,15 @@ class ProfileFragment : Fragment() {
     ): View {
         val profileViewModel =
             ViewModelProvider(this).get(ProfileViewModel::class.java)
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         val textView: TextView = binding.textProfile
         profileViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+        // Add click listener to navigate to profile params
+        binding.buttonProfileParams.setOnClickListener { view ->
+            profileViewModel.onProfileParamsClick(findNavController())
         }
         return root
     }
@@ -37,9 +38,4 @@ class ProfileFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-    fun onProfileParamsClick(view: View) {
-        findNavController().navigate(R.id.navigation_profile_params)
-    }
-
 }
