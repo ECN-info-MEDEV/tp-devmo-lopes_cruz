@@ -52,13 +52,11 @@ class ProfileFragment : Fragment() {
         val button = binding.root.findViewById<LinearLayout>(buttonId)
         val icon = button.findViewById<ImageView>(iconId)
         val text = button.findViewById<TextView>(textId)
-        // Set a click listener on the button
         button.setOnClickListener {
             // Change the text color and icon color when the button is clicked
             text.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
             icon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
             // After a delay, change the text color and icon color back to the original color
-            // and perform an action based on the button ID
             Handler(Looper.getMainLooper()).postDelayed({
                 text.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
                 icon.clearColorFilter()
