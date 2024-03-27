@@ -29,8 +29,7 @@ class ProfileParamsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val profileParamsViewModel =
-            ViewModelProvider(this).get(ProfileParamsViewModel::class.java)
+        val profileParamsViewModel = ViewModelProvider(requireActivity()).get(ProfileParamsViewModel::class.java)
 
         _binding = FragmentProfileParamsBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -80,6 +79,10 @@ class ProfileParamsFragment : Fragment() {
             academicYearEditText.setText(form.academicYear)
             specializationEditText.setText(form.specialization)
             cityEditText.setText(form.city)
+        }
+        // Add click listener to navigate to profile params
+        binding.buttonProfile.setOnClickListener { view ->
+            onReturnClick(view)
         }
 
         return root
