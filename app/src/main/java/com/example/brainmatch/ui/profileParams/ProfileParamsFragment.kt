@@ -76,17 +76,28 @@ class ProfileParamsFragment : Fragment() {
         cityEditText.addTextChangedListener(formTextWatcher)
 
         // Observe changes in the form data
+        // ONLY if they have changed so the cursor move with the text
         profileParamsViewModel.form.observe(viewLifecycleOwner) { form ->
-            universityEditText.setText(form.university)
-            degreeEditText.setText(form.degree)
-            academicYearEditText.setText(form.academicYear)
-            specializationEditText.setText(form.specialization)
-            cityEditText.setText(form.city)
+            if (universityEditText.text.toString() != form.university) {
+                universityEditText.setText(form.university)
+            }
+            if (degreeEditText.text.toString() != form.degree) {
+                degreeEditText.setText(form.degree)
+            }
+            if (academicYearEditText.text.toString() != form.academicYear) {
+                academicYearEditText.setText(form.academicYear)
+            }
+            if (specializationEditText.text.toString() != form.specialization) {
+                specializationEditText.setText(form.specialization)
+            }
+            if (cityEditText.text.toString() != form.city) {
+                cityEditText.setText(form.city)
+            }
         }
         // Add click listener to navigate to profile params
         binding.buttonProfile.setOnClickListener { view ->
             setupButton()
-            onReturnClick(view)
+            onReturnClick()
         }
         return root
     }
@@ -100,7 +111,7 @@ class ProfileParamsFragment : Fragment() {
         }, 150)
     }
 
-    private fun onReturnClick(view: View) {
+    private fun onReturnClick() {
         findNavController().navigate(R.id.navigation_profile)
     }
 

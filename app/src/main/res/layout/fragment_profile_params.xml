@@ -71,7 +71,8 @@
         android:background="@drawable/form_border"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textDirection="ltr"
+        android:inputType="textNoSuggestions"
+        android:imeOptions="flagNoExtractUi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/universityLabel" />
 
@@ -101,7 +102,7 @@
         android:layout_marginEnd="16dp"
         android:textColorHint="#5B808080"
         android:background="@drawable/form_border"
-        android:textDirection="ltr"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/degreeLabel" />
 
@@ -131,7 +132,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/form_border"
-        android:textDirection="ltr"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/specializationLabel" />
 
@@ -161,7 +162,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/form_border"
-        android:textDirection="ltr"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/academicYearLabel" />
 
@@ -191,7 +192,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/form_border"
-        android:textDirection="ltr"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cityLabel" />
 
