@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.brainmatch.R
 import com.example.brainmatch.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -31,6 +33,13 @@ class HomeFragment : Fragment() {
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+        // Set the custom layout to the ActionBar
+        (activity as AppCompatActivity).supportActionBar?.apply {
+            setDisplayShowHomeEnabled(true)
+            setDisplayShowTitleEnabled(false)
+            setCustomView(R.layout.action_bar_layout)
+            setDisplayShowCustomEnabled(true)
         }
         return root
     }

@@ -2,7 +2,17 @@
     <string name="app_name">BrainMatch</string>
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
-    <string name="title_profile_params">Profile Parameters</string>
+    <string name="title_profile_params">Profile Settings</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_messages">Messages</string>
+    <string name="university">University</string>
+    <string name="degree">Degree</string>
+    <string name="academicYear">Academic Year</string>
+    <string name="city">City</string>
+    <string name="specialization">Specialization</string>
+    <string name="university_hint">École Centrale de Nantes</string>
+    <string name="degree_hint">Master of Engineering</string>
+    <string name="academicYear_hint">2022-2025</string>
+    <string name="city_hint">Nantes</string>
+    <string name="specialization_hint">Computer Science</string>
 </resources>
