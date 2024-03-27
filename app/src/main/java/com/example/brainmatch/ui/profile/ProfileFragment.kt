@@ -67,7 +67,7 @@ class ProfileFragment : Fragment() {
                     // If the share button was clicked, create and start a share intent
                     val sendIntent: Intent = Intent().apply {
                         action = Intent.ACTION_SEND
-                        putExtra(Intent.EXTRA_TEXT, "Hey! Join me on BrainWatch. My username is @user123. \n\n Download the app now: https://www.brainwatch.com")
+                        putExtra(Intent.EXTRA_TEXT, "Hey! Join me on BrainMatch. My username is @user123. \n\n Download the app now: https://www.brainmatch.com")
                         type = "text/plain"
                     }
                     val shareIntent = Intent.createChooser(sendIntent, null)
