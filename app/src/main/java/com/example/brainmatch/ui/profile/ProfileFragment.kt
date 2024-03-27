@@ -32,28 +32,22 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val textView: TextView = binding.textProfile
-        // Observe changes in the ViewModel's text property and update the TextView when it changes
         profileViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-
         // Setup buttons with their respective IDs
         setupButton(R.id.button_profile_params, R.id.button_icon_1, R.id.button_text_1)
         setupButton(R.id.button_share, R.id.button_icon_2, R.id.button_text_2)
         setupButton(R.id.button_useless_1, R.id.button_icon_3, R.id.button_text_3)
         setupButton(R.id.button_useless_2, R.id.button_icon_4, R.id.button_text_4)
-
         return root
     }
 
-    // Define a method to setup button click listeners
     private fun setupButton(buttonId: Int, iconId: Int, textId: Int) {
-        // Get references to the button, icon, and text views
         val button = binding.root.findViewById<LinearLayout>(buttonId)
         val icon = button.findViewById<ImageView>(iconId)
         val text = button.findViewById<TextView>(textId)
         button.setOnClickListener {
-            // Change the text color and icon color when the button is clicked
             text.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
             icon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
             // After a delay, change the text color and icon color back to the original color
@@ -76,11 +70,9 @@ class ProfileFragment : Fragment() {
             }, 150)
         }
     }
-
     // Override onDestroyView method which is called when the fragment's view is destroyed
     override fun onDestroyView() {
         super.onDestroyView()
-        // Clear the binding reference when the view is destroyed to prevent memory leaks
         _binding = null
     }
 }
